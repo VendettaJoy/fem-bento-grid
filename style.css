@@ -1,0 +1,17 @@
+:root {
+    /* Colours */
+    --clr-purple-100: hsl(254, 88%, 90%);
+    --clr-purple-500: hsl(256, 67%, 59%);
+
+    --clr-yellow-100: hsl(31, 66%, 93%);
+    --clr-yellow-500: hsl(39, 100%, 71%);
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 0%, 7%);
+
+    /* Typography */
+    --ff-base: "DM Sans", sans-serif;
+    --fs-base: 18px;
+    --fw-regular: 400;
+    --fw-bold: 500;
+}
