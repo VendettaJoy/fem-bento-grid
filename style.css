@@ -1,14 +1,14 @@
 @font-face {
-    font-family: "DM Sans";
-    font-weight: 400 500;
-    src: url(/assets/fonts/DMSans-VariableFont_opsz\,wght.ttf);
+	font-family: "DM Sans";
+	font-weight: 400 500;
+	src: url("/assets/fonts/DMSans-VariableFont_opsz\,wght.ttf");
 }
 
 @font-face {
-    font-family: "DM Sans";
-    font-weight: 400 500;
-    font-style: italic;
-    src: url(/assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+	font-family: "DM Sans";
+	font-weight: 400 500;
+	font-style: italic;
+	src: url("/assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf");
 }
 
 :root {
@@ -58,12 +58,35 @@ h2 {
 	letter-spacing: -0.05em;
 }
 
+/* Utility Classes */
+.italic {
+	font-style: italic;
+}
+
+.yellow-accent {
+	color: var(--clr-yellow-500);
+}
+
+.purple-accent {
+	color: var(--clr-purple-500);
+}
+
 /* Main Styles */
-.container {
+.bento-grid {
 	display: grid;
 	padding: 2rem 1rem;
 	max-width: 70rem;
-	gap: 2rem;
+	gap: 1.75rem;
+
+	grid-template-areas:
+		"block-1"
+		"block-2"
+		"block-3"
+		"block-4"
+		"block-5"
+		"block-6"
+		"block-7"
+		"block-8";
 }
 
 .block {
@@ -74,8 +97,8 @@ h2 {
 	overflow: clip;
 }
 
-/* Block 1 */
 .block-1 {
+	grid-area: block-1;
 	color: var(--clr-white);
 	background-color: var(--clr-purple-500);
 	padding: 2.25rem;
@@ -95,8 +118,8 @@ h2 {
 	}
 }
 
-/* Block 2 */
 .block-2 {
+	grid-area: block-2;
 	background-color: var(--clr-white);
 	padding: 1rem;
 
@@ -107,8 +130,8 @@ h2 {
 	}
 }
 
-/* Block 3 */
 .block-3 {
+	grid-area: block-3;
 	background-color: var(--clr-yellow-500);
 	padding: 1rem;
 
@@ -122,8 +145,8 @@ h2 {
 	}
 }
 
-/* Block 4 */
 .block-4 {
+	grid-area: block-4;
 	background-color: var(--clr-purple-100);
 	padding: 1.75rem 1rem;
 	justify-items: center;
@@ -135,8 +158,8 @@ h2 {
 	}
 }
 
-/* Block 5 */
 .block-5 {
+	grid-area: block-5;
 	color: var(--clr-white);
 	background-color: var(--clr-purple-500);
 	padding: 1.25rem;
@@ -155,8 +178,8 @@ h2 {
 	}
 }
 
-/* Block 6 */
 .block-6 {
+	grid-area: block-6;
 	background-color: var(--clr-white);
 	padding: 1.5rem;
 
@@ -169,8 +192,8 @@ h2 {
 	}
 }
 
-/* Block 7 */
 .block-7 {
+	grid-area: block-7;
 	background-color: var(--clr-yellow-100);
 	padding: 1.5rem;
 
@@ -183,8 +206,8 @@ h2 {
 	}
 }
 
-/* Block 8 */
 .block-8 {
+	grid-area: block-8;
 	background-color: var(--clr-yellow-500);
 	padding: 1.5rem;
 	gap: 1.5rem;
@@ -198,22 +221,22 @@ h2 {
 	}
 }
 
-/* Media Queries */
-@media (min-width: 55rem) {
-	.container {
+/* Media Queries: DESKTOP */
+@media (min-width: 60rem) {
+	.bento-grid {
 		padding: 0;
+		margin: 1rem;
 		justify-self: center;
 		align-self: center;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas:
-			"mini-grid block-1 block-1 block-4"
-			"mini-grid block-2 block-3 block-4"
-			"mini-grid block-6 block-5 block-5";
+			"block-7 block-1 block-1 block-4"
+			"block-7 block-2 block-3 block-4"
+			"block-8 block-2 block-3 block-4"
+			"block-8 block-6 block-5 block-5";
 	}
 
-	/* Block 1 */
 	.block-1 {
-		grid-area: block-1;
 		padding-block: 3.5rem;
 
 		img {
@@ -221,9 +244,7 @@ h2 {
 		}
 	}
 
-	/* Block 2 */
 	.block-2 {
-		grid-area: block-2;
 		padding: 1.5rem;
 
 		img {
@@ -231,20 +252,16 @@ h2 {
 		}
 	}
 
-	/* Block 3 */
 	.block-3 {
-		grid-area: block-3;
 		padding: 1.5rem;
 
 		img {
 			width: 100%;
-			margin-bottom: -100px;
+			margin-block-end: -100px;
 		}
 	}
 
-	/* Block 4 */
 	.block-4 {
-		grid-area: block-4;
 		padding: 2.75rem 1.75rem;
 		justify-items: left;
 
@@ -258,9 +275,7 @@ h2 {
 		}
 	}
 
-	/* Block 5 */
 	.block-5 {
-		grid-area: block-5;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
 		gap: 1rem;
@@ -276,9 +291,7 @@ h2 {
 		}
 	}
 
-	/* Block 6 */
 	.block-6 {
-		grid-area: block-6;
 		padding: 1.5rem;
 
 		img {
@@ -286,19 +299,7 @@ h2 {
 		}
 	}
 
-	.mini-grid {
-		grid-area: mini-grid;
-		display: grid;
-		gap: 2rem;
-		grid-template-rows: 1.45fr 1.55fr;
-		grid-template-areas:
-			"block-7"
-			"block-8";
-	}
-
-	/* Block 7 */
 	.block-7 {
-		grid-area: block-7;
 		padding-inline: 2rem;
 		gap: 1.5rem;
 		align-content: center;
@@ -308,27 +309,16 @@ h2 {
 		}
 	}
 
-	/* Block 8 */
 	.block-8 {
-		grid-area: block-8;
 		align-content: space-between;
+
+		h2 {
+			padding-inline-end: 1rem;
+		}
 
 		img {
 			max-width: 105%;
 			width: 105%;
 		}
 	}
-}
-
-/* Utility Classes */
-.italic {
-	font-style: italic;
-}
-
-.yellow-accent {
-	color: var(--clr-yellow-500);
-}
-
-.purple-accent {
-	color: var(--clr-purple-500);
 }
