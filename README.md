@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   [Solution URL](https://www.frontendmentor.io/solutions/responsive-bent-grid-using-css-grid-waSA_Tc1tk)
+-   [Live Site URL](https://luminous-zabaione-3d5d6c.netlify.app/)
 
 ## My process
 
